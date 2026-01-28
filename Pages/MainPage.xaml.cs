@@ -1,4 +1,5 @@
-﻿using GeoMemo.ViewModels;
+﻿using GeoMemo.Services;
+using GeoMemo.ViewModels;
 
 namespace GeoMemo
 {
@@ -13,7 +14,13 @@ namespace GeoMemo
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await ((MainPageViewModel)BindingContext).LoadAsync();
+            bool granted = await PermissionHelper.RequestLocationPermissionAsync();
+
+            if (granted)
+            {
+                await ((MainPageViewModel)BindingContext).LoadAsync();
+                await ((MainPageViewModel)BindingContext).StartLocationAsync();
+            }
         }
     }
 }

@@ -29,6 +29,8 @@ namespace GeoMemo
 
                 return new SQLiteManager(dbPath);
             });
+            builder.Services.AddSingleton<ILocationService, LocationService>();
+            builder.Services.AddSingleton<IGeoCoderService, NominatimService>();
             builder.Services.AddTransient<MainPageViewModel>();
 
             return builder.Build();

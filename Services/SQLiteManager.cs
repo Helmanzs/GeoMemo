@@ -6,7 +6,6 @@ namespace GeoMemo.Services
     public class SQLiteManager
     {
         private bool _initialized;
-
         private readonly SQLiteAsyncConnection _db;
 
         public SQLiteManager(string dbPath)
@@ -19,8 +18,8 @@ namespace GeoMemo.Services
             if (_initialized)
                 return;
 
-            await _db.CreateTableAsync<Obec>();
             await _db.CreateTableAsync<GeoVzpominka>();
+            await _db.CreateTableAsync<Obec>();
 
             await SeedObceAsync();
             _initialized = true;
@@ -33,13 +32,34 @@ namespace GeoMemo.Services
         }
 
         // READ
-        public Task<List<GeoVzpominka>> GetAllAsync()
+        public Task<List<GeoVzpominka>> GetAllVzpominka()
         {
             return _db.Table<GeoVzpominka>()
                       .OrderByDescending(x => x.CreatedAt)
                       .ToListAsync();
         }
 
+        // SAFE READ - 
+        public async Task<List<GeoVzpominka>> GetAllVzpominkaSafe()
+        {
+            try
+            {
+                if (!_initialized)
+                    await InitAsync();
+
+                return await _db.Table<GeoVzpominka>()
+                                .OrderByDescending(x => x.CreatedAt)
+                                .ToListAsync();
+            }
+            catch (SQLite.SQLiteException ex) when (ex.Message.Contains("no such table"))
+            {
+                System.Diagnostics.Debug.WriteLine("Tabulka GeoVzpominky ještě není připravena, zkusím znovu později.");
+                await Task.Delay(2000);
+                return await GetAllVzpominkaSafe();
+            }
+        }
+
+        // READ Obce
         public Task<List<Obec>> GetObceAsync()
         {
             return _db.Table<Obec>()
@@ -47,24 +67,13 @@ namespace GeoMemo.Services
                       .ToListAsync();
         }
 
-        public Task<GeoVzpominka> GetByIdAsync(int id)
-        {
-            return _db.Table<GeoVzpominka>()
-                      .FirstOrDefaultAsync(x => x.Id == id);
-        }
-
-        // UPDATE
-        public Task<int> UpdateAsync(GeoVzpominka item)
-        {
-            return _db.UpdateAsync(item);
-        }
-
         // DELETE
-        public Task<int> DeleteAsync(GeoVzpominka item)
+        public Task<int> DeleteVzpominka(GeoVzpominka item)
         {
             return _db.DeleteAsync(item);
         }
 
+        // naplnění tabulky obcí ze souboru JSON
         private async Task SeedObceAsync()
         {
             var count = await _db.Table<Obec>().CountAsync();

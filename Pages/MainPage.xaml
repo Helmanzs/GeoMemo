@@ -1,26 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GeoMemo.MainPage">
+             x:Class="GeoMemo.MainPage"
+             x:Name="Root">
 
+    <AbsoluteLayout>
 
-    <VerticalStackLayout Padding="24" Spacing="12">
+        <Grid AbsoluteLayout.LayoutBounds="0,0,1,1"
+              AbsoluteLayout.LayoutFlags="All"
+              Padding="10">
 
-        <Label Text="{Binding Status}"
-               FontSize="18"
-               FontAttributes="Bold" />
+            <!-- Tři řádky: tlačítko, CollectionView, spodní padding -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+                <!-- místo pro floating button -->
+            </Grid.RowDefinitions>
 
-        <Label Text="{Binding Latitude, StringFormat='Latitude: {0:F6}'}"
-               IsVisible="{Binding Latitude}" />
+            <!-- Tlačítko pro řazení -->
+            <Button Grid.Row="0"
+                    Text="⋮"
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    CornerRadius="30"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    FontSize="18"
+                    HorizontalOptions="End"
+                    Command="{Binding ShowSortOptionsCommand}" />
 
-        <Label Text="{Binding Longitude, StringFormat='Longitude: {0:F6}'}"
-               IsVisible="{Binding Longitude}" />
+            <!-- Kolekce vzpomínek -->
+            <CollectionView Grid.Row="1"
+                            ItemsSource="{Binding Vzpominky}"
+                            Margin="0,5">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="#C49B33"
+                                StrokeThickness="2"
+                                StrokeShape="RoundRectangle 20"
+                                Padding="10"
+                                Margin="5">
+                            <VerticalStackLayout Spacing="5">
 
-        <Label Text="{Binding Accuracy, StringFormat='Přesnost: {0:F0} m'}"
-               IsVisible="{Binding Accuracy}" />
+                                <!-- Horní řádek: název a tlačítko smazat -->
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
 
-    </VerticalStackLayout>
+                                    <Label Grid.Column="0"
+                                           Text="{Binding NazevObce}"
+                                           FontAttributes="Bold"
+                                           FontSize="18"
+                                           VerticalOptions="Center"/>
 
+                                    <Button Grid.Column="1"
+                                            Text="-"
+                                            WidthRequest="30"
+                                            HeightRequest="30"
+                                            CornerRadius="15"
+                                            BackgroundColor="Red"
+                                            TextColor="White"
+                                            FontAttributes="Bold"
+                                            Command="{Binding Source={x:Reference Root}, Path=BindingContext.RemoveGeoVzpominkaCommand}"
+                                            CommandParameter="{Binding .}" />
+                                </Grid>
 
+                                <!-- Hodnocení -->
+                                <Label Text="{Binding Hodnoceni, StringFormat='Hodnocení: {0}'}" FontSize="14"/>
 
+                                <!-- Popis -->
+                                <Label Text="{Binding Popis}" LineBreakMode="WordWrap" FontSize="14"/>
+
+                                <!-- Obrázek -->
+                                <Image Source="{Binding ImagePath}"
+                                       HeightRequest="150"/>
+
+                                <!-- Latitude + Longitude -->
+                                <HorizontalStackLayout Spacing="10">
+                                    <Label Text="{Binding Latitude, StringFormat='Lat: {0:F6}'}" TextColor="Gray" FontSize="12"/>
+                                    <Label Text="{Binding Longitude, StringFormat='Lon: {0:F6}'}" TextColor="Gray" FontSize="12"/>
+                                </HorizontalStackLayout>
+
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+
+        <!-- Floating tlačítko + -->
+        <Button Text="+"
+                WidthRequest="60"
+                HeightRequest="60"
+                CornerRadius="30"
+                BackgroundColor="DodgerBlue"
+                TextColor="White"
+                FontSize="24"
+                AbsoluteLayout.LayoutBounds="0.95,0.95,60,60"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Command="{Binding AddGeoVzpominkaCommand}" />
+
+    </AbsoluteLayout>
 </ContentPage>
