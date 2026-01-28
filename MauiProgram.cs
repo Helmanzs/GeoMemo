@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using GeoMemo.Services;
+using GeoMemo.ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace GeoMemo
 {
@@ -16,8 +18,18 @@ namespace GeoMemo
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<SQLiteManager>(sp =>
+            {
+                var dbPath = Path.Combine(
+                    FileSystem.AppDataDirectory,
+                    "geovzpominky.db3"
+                );
+
+                return new SQLiteManager(dbPath);
+            });
+            builder.Services.AddTransient<MainPageViewModel>();
 
             return builder.Build();
         }

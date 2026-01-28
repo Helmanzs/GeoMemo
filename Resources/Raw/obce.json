@@ -1,0 +1,387 @@
+﻿[
+  {
+    "Id": 1,
+    "Nazev": "Arnoltice"
+  },
+  {
+    "Id": 2,
+    "Nazev": "Benešov nad Ploučnicí"
+  },
+  {
+    "Id": 3,
+    "Nazev": "Bynovec"
+  },
+  {
+    "Id": 4,
+    "Nazev": "Česká Kamenice"
+  },
+  {
+    "Id": 5,
+    "Nazev": "Děčín"
+  },
+  {
+    "Id": 6,
+    "Nazev": "Dobkovice"
+  },
+  {
+    "Id": 7,
+    "Nazev": "Dobrná"
+  },
+  {
+    "Id": 8,
+    "Nazev": "Dolní Habartice"
+  },
+  {
+    "Id": 9,
+    "Nazev": "Dolní Podluží"
+  },
+  {
+    "Id": 10,
+    "Nazev": "Dolní Poustevna"
+  },
+  {
+    "Id": 11,
+    "Nazev": "Doubice"
+  },
+  {
+    "Id": 12,
+    "Nazev": "Františkov nad Ploučnicí"
+  },
+  {
+    "Id": 13,
+    "Nazev": "Heřmanov"
+  },
+  {
+    "Id": 14,
+    "Nazev": "Horní Habartice"
+  },
+  {
+    "Id": 15,
+    "Nazev": "Horní Podluží"
+  },
+  {
+    "Id": 16,
+    "Nazev": "Hřensko"
+  },
+  {
+    "Id": 17,
+    "Nazev": "Huntířov"
+  },
+  {
+    "Id": 18,
+    "Nazev": "Chřibská"
+  },
+  {
+    "Id": 19,
+    "Nazev": "Janov"
+  },
+  {
+    "Id": 20,
+    "Nazev": "Janská"
+  },
+  {
+    "Id": 21,
+    "Nazev": "Jetřichovice"
+  },
+  {
+    "Id": 22,
+    "Nazev": "Jílové"
+  },
+  {
+    "Id": 23,
+    "Nazev": "Jiřetín pod Jedlovou"
+  },
+  {
+    "Id": 24,
+    "Nazev": "Jiříkov"
+  },
+  {
+    "Id": 25,
+    "Nazev": "Kámen"
+  },
+  {
+    "Id": 26,
+    "Nazev": "Krásná Lípa"
+  },
+  {
+    "Id": 27,
+    "Nazev": "Kunratice"
+  },
+  {
+    "Id": 28,
+    "Nazev": "Kytlice"
+  },
+  {
+    "Id": 29,
+    "Nazev": "Labská Stráň"
+  },
+  {
+    "Id": 30,
+    "Nazev": "Lipová"
+  },
+  {
+    "Id": 31,
+    "Nazev": "Lobendava"
+  },
+  {
+    "Id": 32,
+    "Nazev": "Ludvíkovice"
+  },
+  {
+    "Id": 33,
+    "Nazev": "Malá Veleň"
+  },
+  {
+    "Id": 34,
+    "Nazev": "Malšovice"
+  },
+  {
+    "Id": 35,
+    "Nazev": "Markvartice"
+  },
+  {
+    "Id": 36,
+    "Nazev": "Merboltice"
+  },
+  {
+    "Id": 37,
+    "Nazev": "Mikulášovice"
+  },
+  {
+    "Id": 38,
+    "Nazev": "Rumburk"
+  },
+  {
+    "Id": 39,
+    "Nazev": "Růžová"
+  },
+  {
+    "Id": 40,
+    "Nazev": "Rybniště"
+  },
+  {
+    "Id": 41,
+    "Nazev": "Srbská Kamenice"
+  },
+  {
+    "Id": 42,
+    "Nazev": "Staré Křečany"
+  },
+  {
+    "Id": 43,
+    "Nazev": "Starý Šachov"
+  },
+  {
+    "Id": 44,
+    "Nazev": "Šluknov"
+  },
+  {
+    "Id": 45,
+    "Nazev": "Těchlovice"
+  },
+  {
+    "Id": 46,
+    "Nazev": "Valkeřice"
+  },
+  {
+    "Id": 47,
+    "Nazev": "Varnsdorf"
+  },
+  {
+    "Id": 48,
+    "Nazev": "Velká Bukovina"
+  },
+  {
+    "Id": 49,
+    "Nazev": "Velký Šenov"
+  },
+  {
+    "Id": 50,
+    "Nazev": "Verneřice"
+  },
+  {
+    "Id": 51,
+    "Nazev": "Veselé"
+  },
+  {
+    "Id": 52,
+    "Nazev": "Vilémov"
+  },
+
+  {
+    "Id": 53,
+    "Nazev": "Bílence"
+  },
+  {
+    "Id": 54,
+    "Nazev": "Blatno"
+  },
+  {
+    "Id": 55,
+    "Nazev": "Boleboř"
+  },
+  {
+    "Id": 56,
+    "Nazev": "Březno"
+  },
+  {
+    "Id": 57,
+    "Nazev": "Černovice"
+  },
+  {
+    "Id": 58,
+    "Nazev": "Domašín"
+  },
+  {
+    "Id": 59,
+    "Nazev": "Droužkovice"
+  },
+  {
+    "Id": 60,
+    "Nazev": "Hora Svatého Šebestiána"
+  },
+  {
+    "Id": 61,
+    "Nazev": "Hrušovany"
+  },
+  {
+    "Id": 62,
+    "Nazev": "Chbany"
+  },
+  {
+    "Id": 63,
+    "Nazev": "Chomutov"
+  },
+  {
+    "Id": 64,
+    "Nazev": "Jirkov"
+  },
+  {
+    "Id": 65,
+    "Nazev": "Kadaň"
+  },
+  {
+    "Id": 66,
+    "Nazev": "Kalek"
+  },
+  {
+    "Id": 67,
+    "Nazev": "Klášterec nad Ohří"
+  },
+  {
+    "Id": 68,
+    "Nazev": "Kovářská"
+  },
+  {
+    "Id": 69,
+    "Nazev": "Kryštofovy Hamry"
+  },
+  {
+    "Id": 70,
+    "Nazev": "Křimov"
+  },
+  {
+    "Id": 71,
+    "Nazev": "Libědice"
+  },
+  {
+    "Id": 72,
+    "Nazev": "Loučná pod Klínovcem"
+  },
+  {
+    "Id": 73,
+    "Nazev": "Málkov"
+  },
+  {
+    "Id": 74,
+    "Nazev": "Mašťov"
+  },
+  {
+    "Id": 75,
+    "Nazev": "Měděnec"
+  },
+  {
+    "Id": 76,
+    "Nazev": "Místo"
+  },
+  {
+    "Id": 77,
+    "Nazev": "Nezabylice"
+  },
+  {
+    "Id": 78,
+    "Nazev": "Okounov"
+  },
+  {
+    "Id": 79,
+    "Nazev": "Otvice"
+  },
+  {
+    "Id": 80,
+    "Nazev": "Perštejn"
+  },
+  {
+    "Id": 81,
+    "Nazev": "Pesvice"
+  },
+  {
+    "Id": 82,
+    "Nazev": "Pětipsy"
+  },
+  {
+    "Id": 83,
+    "Nazev": "Račetice"
+  },
+  {
+    "Id": 84,
+    "Nazev": "Radonice"
+  },
+  {
+    "Id": 85,
+    "Nazev": "Rokle"
+  },
+  {
+    "Id": 86,
+    "Nazev": "Spořice"
+  },
+  {
+    "Id": 87,
+    "Nazev": "Strupčice"
+  },
+  {
+    "Id": 88,
+    "Nazev": "Údlice"
+  },
+  {
+    "Id": 89,
+    "Nazev": "Vejprty"
+  },
+  {
+    "Id": 90,
+    "Nazev": "Veliká Ves"
+  },
+  {
+    "Id": 91,
+    "Nazev": "Vilémov"
+  },
+  {
+    "Id": 92,
+    "Nazev": "Vrskmaň"
+  },
+  {
+    "Id": 93,
+    "Nazev": "Všehrdy"
+  },
+  {
+    "Id": 94,
+    "Nazev": "Všestudy"
+  },
+  {
+    "Id": 95,
+    "Nazev": "Výsluní"
+  },
+  {
+    "Id": 96,
+    "Nazev": "Vysoká Pec"
+  }
+]
