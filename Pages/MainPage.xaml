@@ -3,26 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GeoMemo.MainPage">
 
-    <CollectionView ItemsSource="{Binding Obce}">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Frame Margin="8" Padding="10">
-                    <VerticalStackLayout>
-                        <Label Text="{Binding Nazev}"
-                               FontSize="18"
-                               FontAttributes="Bold"/>
 
-                        <Label Text="{Binding Okres}"
-                               FontSize="14"
-                               TextColor="Gray"/>
+    <VerticalStackLayout Padding="24" Spacing="12">
 
-                        <Label Text="{Binding Kraj}"
-                               FontSize="13"
-                               TextColor="DarkGray"/>
-                    </VerticalStackLayout>
-                </Frame>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+        <Label Text="{Binding Status}"
+               FontSize="18"
+               FontAttributes="Bold" />
+
+        <Label Text="{Binding Latitude, StringFormat='Latitude: {0:F6}'}"
+               IsVisible="{Binding Latitude}" />
+
+        <Label Text="{Binding Longitude, StringFormat='Longitude: {0:F6}'}"
+               IsVisible="{Binding Longitude}" />
+
+        <Label Text="{Binding Accuracy, StringFormat='Přesnost: {0:F0} m'}"
+               IsVisible="{Binding Accuracy}" />
+
+    </VerticalStackLayout>
+
+
 
 </ContentPage>
